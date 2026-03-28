@@ -1,0 +1,125 @@
+#
+Experiment 1 
+1. What is an ADT?
+An ADT (Abstract Data Type) is a logical description of a data type that defines:
+What operations can be performed. But not how those operations are implemented It focuses on behavior, not implementation.
+For example, Stack ADT defines operations like push, pop, and peek, but it does not specify whether the stack is implemented using an array or a linked list.
+
+2. Why can push/pop be O(1)?
+Push and pop operations in a stack take O(1) time because:
+They operate only on the top element. No traversal of elements is required. Only one insertion or deletion is performed.
+Since the time does not depend on the size of the stack, the complexity is constant.
+
+3. One real-world use of stack?
+One real-world use of a stack is:
+Undo/Redo feature in applications. 
+
+Experiment 2 
+1. Big-O vs Big-Theta difference?
+Big-O (O) represents the upper bound of an algorithm’s time complexity.
+It tells us the worst-case growth rate.
+Big-Theta (Θ) represents the exact bound (tight bound).
+It gives both upper and lower bounds of growth.
+
+2. What does worst-case represent?
+Worst-case represents the maximum number of operations an algorithm can perform for a given input size.
+It shows the slowest possible performance of the algorithm.
+Example:
+In linear search, worst case occurs when the element is at the last position or not present.
+
+3. Why does complexity matter in real systems?
+Complexity matters because:
+It affects performance and speed. It affects memory usage. It helps choose efficient algorithms. In large systems, inefficient algorithms can slow down or crash the system
+Efficient algorithms save time and resources.
+
+Experiment 3
+1. What is recursion depth?
+Recursion depth is the number of times a recursive function calls itself before reaching the base case.
+It represents the maximum number of active function calls in the call stack at any time.
+For example, in factorial(5), the recursion depth is 5.
+
+2. Why does recursion use stack memory?
+Recursion uses stack memory because:
+Every function call is stored in the call stack. The stack keeps track of local variables, parameters, and return addresses.
+When a recursive function calls itself, a new stack frame is created.
+All these frames are stored until the base case is reached.
+
+3. When is iteration better than recursion?
+Iteration is better when:
+The problem does not naturally require recursion. 
+Memory usage needs to be minimized.Recursion depth can be very large (to avoid stack overflow).
+Iteration usually uses less memory than recursion.
+
+Experiment 4 
+1. Why is naive Fibonacci slow?
+Naive Fibonacci is slow because it recalculates the same subproblems multiple times.
+For example, to compute F(5):
+It calculates F(4) and F(3)
+F(4) again calculates F(3) and F(2)
+So, F(3) is computed more than once.
+This repetition causes the number of function calls to grow exponentially.
+Time Complexity = O(2ⁿ)
+
+2. Is memoization related to Dynamic Programming (DP)?
+Yes
+
+3. What is the space impact of memoization?
+Memoization uses extra memory to store computed values.
+Time complexity improves (from O(2ⁿ) to O(n))
+But space complexity increases to O(n)
+It uses:
+O(n) space for storing results
+O(n) recursion stack space
+
+Experiment 5
+1. Why are moves equal to 2ⁿ − 1? (Tower of Hanoi)
+In Tower of Hanoi:
+To move n disks, we:
+Move (n−1) disks to auxiliary rod
+Move 1 largest disk
+Move (n−1) disks again
+So recurrence relation is:
+T(n) = 2T(n−1) + 1
+When solved, it becomes: T(n) = 2ⁿ − 1
+That is why minimum number of moves is 2ⁿ − 1.
+
+2. What is recursion tree idea?
+A recursion tree is a diagram that shows:
+How recursive calls are made
+How the problem is divided into smaller subproblems
+Each node represents a function call.
+It helps in analyzing time complexity, especially in algorithms like Fibonacci.
+
+3. Practical risk of exponential algorithms?
+Exponential algorithms (like O(2ⁿ)):
+Grow very fast as input increases
+Become extremely slow for large inputs
+Can cause high CPU usage
+May lead to system slowdown or crash
+They are not practical for large-scale real systems.
+
+Experiment 6
+1. Why is sorted data required?
+Sorted data is required because binary search works by:
+Comparing the middle element
+Eliminating half of the remaining elements
+This elimination is only possible if the data is in sorted order.
+If the data is not sorted, we cannot decide which half to discard.
+
+2. Best / Average / Worst Case?
+Best Case:
+Minimum number of operations.
+Example: In binary search, best case is O(1) when the middle element is the key.
+Average Case:
+Expected number of operations for a typical input.
+For binary search → O(log n).
+Worst Case:
+Maximum number of operations.
+For binary search → O(log n).
+
+3. Divide & Conquer meaning?
+Divide and Conquer is a strategy where:
+The problem is divided into smaller subproblems.
+Each subproblem is solved recursively.
+The results are combined to get the final solution.
+Example: Binary Search, Merge Sort.

@@ -229,4 +229,6 @@ numbers = [170, 45, 75, 90, 802, 24, 2, 66]
 sorted_numbers = radix_sort(numbers)    
 print("Sorted numbers using Radix Sort:", sorted_numbers)
 
-searching and sorting algorithms are fundamental concepts in computer science that are used to organize and retrieve data efficiently. Sorting algorithms arrange data in a specific order, while searching algorithms find specific elements within a dataset. Understanding these algorithms is crucial for optimizing performance and solving various computational problems.
+#searching and sorting algorithms are fundamental concepts in computer science that are used to organize and retrieve data efficiently.
+#Sorting algorithms arrange data in a specific order, while searching algorithms find specific elements within a dataset
+#Understanding these algorithms is crucial for optimizing performance and solving various computational problems.
